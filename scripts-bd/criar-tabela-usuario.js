@@ -2,21 +2,21 @@ import { sql } from "../db.js"
 
 
 
-async function criar(){
+export async function criar(){
   
-  try {
-    await sql`
-      DROP TABLE IF EXISTS usuarios;
-    ` 
-    console.log("Tabela apagada")
-  } catch (error) {
-    console.log(error)
+  // try {
+  //   await sql`
+  //     DROP TABLE IF EXISTS usuarios;
+  //   ` 
+  //   console.log("Tabela apagada")
+  // } catch (error) {
+  //   console.log(error)
     
-  }
+  // }
   
   try {
     await sql`
-      CREATE TABLE usuarios (
+      CREATE TABLE if not exists usuarios (
         id      VARCHAR(50)  PRIMARY KEY,     
         nome    VARCHAR(100), 
         email   VARCHAR(150), 
@@ -32,6 +32,3 @@ async function criar(){
 
 
 }
-
-
-criar()

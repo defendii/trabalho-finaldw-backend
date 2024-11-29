@@ -20,11 +20,16 @@ const server = fastify()
 
 // Registra o middleware CORS para permitir requisições de qualquer origem
 await server.register(cors, {
-  origin: '*', // Configuração que permite requisições de qualquer domínio (usar com cautela em produção)
+  origin: '*', // Configuração que permitae requisições de qualquer domínio (usar com cautela em produção)
 });
 
 // Instancia o banco de dados PostgreSQL
 const database = new DatabasePostgres();
+
+server.get("/", async (request, reply) => {
+  reply.send({ message: "Bem-vindo à API de Usuários!" });
+});
+
 
 // Rota para criar um novo usuário (POST)
 server.post("/usuarios", async (request, reply) => {
