@@ -1,0 +1,33 @@
+
+GET http://trabalho-finaldw-backend.onrender.com/usuarios
+
+###
+
+GET http://localhost:3333/usuarios?nome=joão
+
+###
+
+POST http://trabalho-finaldw-backend.onrender.com/usuarios
+Content-type: application/json
+
+{
+  "nome": "Jose",
+  "email": "jose@gmail.com",
+  "celular": "44 91234-1234"
+}
+
+###
+
+PUT http://localhost:3333/usuarios/b8093df3-d630-429c-acb4-36b6ee74c560
+Content-type: application/json
+Accept-Language: pt
+
+{
+  "nome": "João da Silva",
+  "email": "joaodasilva2@gmail.com",
+  "celular": "44 91234-1234"
+}
+
+###
+
+DELETE http://trabalho-finaldw-backend.onrender.com/usuarios/473cb0fd-d705-4e2c-8f89-20a9a8239b79
