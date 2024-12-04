@@ -22,15 +22,15 @@ export class DatabasePostgres {
 
   async create(usuario) {
     const usuarioId = randomUUID();
-    const { nome, email, celular } = usuario;
+    const { nome, email, telefone, endereco } = usuario;
 
-    await sql`insert into usuarios (id, nome, email, celular) VALUES (${usuarioId}, ${nome}, ${email}, ${celular})`;
+    await sql`insert into usuarios (id, nome, email, telefone, endereco) VALUES (${usuarioId}, ${nome}, ${email}, ${telefone}, ${endereco})`;
   }
 
   async update(id, usuario) {
-    const { nome, email, celular } = usuario;
+    const { nome, email, telefone, endereco } = usuario;
 
-    await sql`update usuarios set nome = ${nome}, email = ${email}, celular = ${celular} WHERE id = ${id}`;
+    await sql`update usuarios set nome = ${nome}, email = ${email}, telefone = ${telefone}, endereco= ${endereco} WHERE id = ${id}`;
   }
 
   async delete(id) {

@@ -6,7 +6,8 @@ Content-type: application/json
 {
   "nome": "João da Silva",
   "email": "joaodasilva@gmail.com",
-  "celular": "44 91234-1234"
+  "telefone": "44 91234-1234",
+  "endereco": "Rua das Cenouras 666",
 }
 
 ###
@@ -17,7 +18,8 @@ Content-type: application/json
 {
   "nome": "Maria Freitas",
   "email": "mariafreitas@gmail.com",
-  "celular": "44 94321-4321"
+  "telefone": "44 94321-4321",
+  "endereco": "Rua das Bermudas 245",
 }
 
 ###
@@ -37,7 +39,8 @@ Accept-Language: pt
 {
   "nome": "João da Silva",
   "email": "joaodasilva2@gmail.com",
-  "celular": "44 91234-1234"
+  "telefone": "44 91234-1234",
+  "endereco": "Rua das Cachoeiras 245"
 }
 
 ###
