@@ -13,7 +13,8 @@ Content-type: application/json
 {
   "nome": "Jose",
   "email": "jose@gmail.com",
-  "celular": "44 91234-1234"
+  "telefone": "44 91234-1234",
+  "endereco": "Rua das Cenouras 666",
 }
 
 ###
@@ -25,7 +26,8 @@ Accept-Language: pt
 {
   "nome": "João da Silva",
   "email": "joaodasilva2@gmail.com",
-  "celular": "44 91234-1234"
+  "telefone": "44 91234-1234",
+  "endereco": "Rua das Bermudas 245",
 }
 
 ###
