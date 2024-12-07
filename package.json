@@ -1,11 +1,12 @@
 {
   "name": "dw2-backend-crud",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend exemplo para a disciplina de Desenvolvimento Web 2",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,6 @@
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.7"
   }
 }
