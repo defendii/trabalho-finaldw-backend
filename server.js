@@ -34,13 +34,13 @@ server.get("/", async (request, reply) => {
 // Rota para criar um novo usuário (POST)
 server.post("/usuarios", async (request, reply) => {
   // Desestrutura os dados do corpo da requisição
-  const { nome, email, celular } = request.body;
+  const { nome, email, telefone } = request.body;
 
   // Chama o método create do banco de dados para inserir um novo vídeo
   await database.create({
     nome: nome,
     email: email,
-    celular: celular,
+    telefone: telefone,
   });
 
   // Retorna uma resposta de sucesso com código 201 (Created)
@@ -65,13 +65,13 @@ server.put("/usuarios/:id", async (request, reply) => {
   // Obtém o ID do usuário a ser atualizado a partir dos parâmetros da URL
   const usuarioId = request.params.id;
   // Desestrutura os novos dados do usuário do corpo da requisição
-  const { nome, email, celular } = request.body;
+  const { nome, email, telefone } = request.body;
 
   // Chama o método update do banco de dados
   await database.update(usuarioId, {
     nome,
     email,
-    celular,
+    telefone,
   });
 
   // Retorna uma resposta de sucesso sem conteúdo (204 No Content)
