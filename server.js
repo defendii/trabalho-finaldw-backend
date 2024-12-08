@@ -1,6 +1,6 @@
 /**
  * Servidor Fastify que fornece uma API RESTful para gerenciamento de vídeos.
- * 
+ *
  * O servidor suporta os seguintes endpoints:
  * - `POST /videos`: Cria um novo vídeo com título, descrição e duração fornecidos.
  * - `GET /videos`: Recupera uma lista de vídeos, opcionalmente filtrada por um termo de busca.
@@ -34,13 +34,14 @@ server.get("/", async (request, reply) => {
 // Rota para criar um novo usuário (POST)
 server.post("/usuarios", async (request, reply) => {
   // Desestrutura os dados do corpo da requisição
-  const { nome, email, telefone } = request.body;
+  const { nome, email, telefone, endereco } = request.body;
 
   // Chama o método create do banco de dados para inserir um novo vídeo
   await database.create({
     nome: nome,
     email: email,
     telefone: telefone,
+    endereco: endereco
   });
 
   // Retorna uma resposta de sucesso com código 201 (Created)
@@ -48,16 +49,16 @@ server.post("/usuarios", async (request, reply) => {
 });
 
 // Rota para listar usuários (GET)
-server.get("/usuarios", async (request, reply) => {                                    
+server.get("/usuarios", async (request, reply) => {
   // Extrai o parâmetro de busca da query da URL
   const { nome } = request.query
-  
+
   // Chama o método list do banco de dados, passando o termo de busca
   const usuarios = await database.list(nome);
 
   reply.send(usuarios)
 
-  
+
 });
 
 // Rota para atualizar um vídeo existente (PUT)
@@ -65,13 +66,14 @@ server.put("/usuarios/:id", async (request, reply) => {
   // Obtém o ID do usuário a ser atualizado a partir dos parâmetros da URL
   const usuarioId = request.params.id;
   // Desestrutura os novos dados do usuário do corpo da requisição
-  const { nome, email, telefone } = request.body;
+  const { nome, email, telefone, endereco } = request.body;
 
   // Chama o método update do banco de dados
   await database.update(usuarioId, {
     nome,
     email,
     telefone,
+    endereco
   });
 
   // Retorna uma resposta de sucesso sem conteúdo (204 No Content)
@@ -91,12 +93,12 @@ server.delete("/usuarios/:id", async (request, reply) => {
 
 // Inicia o servidor
 server.listen(
-  { 
+  {
     // Configura para escutar em todos os endereços de rede
     host: "0.0.0.0",
     // Usa a porta definida no .env ou usa a porta 3333 como padrão
-    port: process.env.PORT ?? 3333 
-  }, 
+    port: process.env.PORT ?? 3333
+  },
   // Callback de inicialização do servidor
   function (err, address) {
     // Em caso de erro, registra o erro e encerra o processo
