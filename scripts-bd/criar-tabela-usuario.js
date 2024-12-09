@@ -4,15 +4,15 @@ import { sql } from "../db.js"
 
 export async function criar(){
 
-  try {
-    await sql`
-      DROP TABLE IF EXISTS usuarios;
-    `
-    console.log("Tabela apagada")
-  } catch (error) {
-    console.log(error)
+  // try {
+  //   await sql`
+  //     DROP TABLE IF EXISTS usuarios;
+  //   `
+  //   console.log("Tabela apagada")
+  // } catch (error) {
+  //   console.log(error)
 
-  }
+  // }
 
 
   try {
